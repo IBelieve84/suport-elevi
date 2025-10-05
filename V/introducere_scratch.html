@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Introducere Scratch</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/script.js"></script>
+</head>
+<body>
+  <h2>Introducere în Scratch</h2>
+
+  <p>Exercițiu fix:</p>
+  <p>Completează pașii de rezolvare pentru adunarea a două numere:</p>
+
+  <button onclick="toggleHelp('help1')">Afișează / Ascunde ajutor Blockly</button>
+  <div id="help1" style="display:none; margin-top:10px;">
+    1. Citește numărul 1<br>
+    2. Citește numărul 2<br>
+    3. Calculează suma<br>
+    4. Afișează suma
+  </div>
+
+  <hr>
+
+  <p>Exercițiu generat aleator:</p>
+  <p id="random-ex"></p>
+  <input type="number" id="answer" placeholder="Scrie răspunsul">
+  <button onclick="checkAnswer()">Verifică</button>
+  <p id="feedback"></p>
+  <button onclick="generateExercise()">Generează exercițiu nou</button>
+
+  <script>
+    generateExercise(); // generează exercițiu la încărcarea paginii
+  </script>
+
+  <h3>Exercițiu personalizat cu +, -, *, /, %</h3>
+
+  <label>Număr de operatori:
+    <input type="number" id="numOperators" value="2" min="1" max="5">
+  </label><br>
+
+  <label>
+    Include paranteze?
+    <input type="checkbox" id="useParens">
+  </label><br>
+
+  <button onclick="generateCustomExercise()">Generează expresie</button>
+
+  <p id="custom-ex"></p>
+  <input type="text" id="custom-answer" placeholder="Scrie răspunsul">
+  <button onclick="checkCustomAnswer()">Verifică</button>
+  <p id="custom-feedback"></p>
+
+  <h3>Exercițiu logic personalizat</h3>
+
+  <label>Număr de operatori logici:
+    <input type="number" id="numLogicOps" value="2" min="1" max="5">
+  </label><br>
+
+  <label>
+    Include paranteze?
+    <input type="checkbox" id="logicParens">
+  </label><br>
+
+  <button onclick="generateLogicExercise()">Generează expresie logică</button>
+
+  <p id="logic-ex"></p>
+  <select id="logic-answer">
+    <option value="">Selectează răspunsul</option>
+    <option value="true">Adevărat</option>
+    <option value="false">Fals</option>
+  </select>
+  <button onclick="checkLogicAnswer()">Verifică</button>
+  <p id="logic-feedback"></p>
+
+</body>
+</html>
